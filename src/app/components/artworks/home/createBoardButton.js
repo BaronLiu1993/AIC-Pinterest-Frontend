@@ -26,9 +26,15 @@ export default function CreateBoardButton({ userId }) {
             </div>
           </div>
         </DialogTrigger>
-        <DialogContent>
+        <DialogContent className = "font-IBM rounded-sm">
           <DialogTitle>Create New Board</DialogTitle>
-          <DialogDescription>Test</DialogDescription>
+          <DialogDescription className="flex flex-col">
+            <h1>Board Title</h1>
+            <input className = ""/>
+            <h1>Board Description</h1>
+            <input />
+            <button>Create New Board</button>
+          </DialogDescription>
         </DialogContent>
       </Dialog>
     </>

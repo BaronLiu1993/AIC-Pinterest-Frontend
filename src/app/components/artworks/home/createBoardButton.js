@@ -1,3 +1,4 @@
+import { Textarea } from "@/shadcomponents/ui/textarea";
 import {
   Dialog,
   DialogContent,
@@ -26,13 +27,23 @@ export default function CreateBoardButton({ userId }) {
             </div>
           </div>
         </DialogTrigger>
-        <DialogContent className = "font-IBM rounded-sm">
-          <DialogTitle>Create New Board</DialogTitle>
-          <DialogDescription className="flex flex-col">
-            <h1>Board Title</h1>
-            <input className = ""/>
-            <h1>Board Description</h1>
-            <input />
+        <DialogContent className="font-IBM rounded-sm">
+          <DialogTitle className="text-xl">Edit Board Detail</DialogTitle>
+          <DialogDescription className="flex flex-col gap-4">
+            <div className="flex justify-center items-center">
+              <div className="bg-gray-100 w-[10rem] h-[10rem]"></div>
+              <div>
+                <div className="flex flex-col gap-2">
+                  <input
+                    placeholder="Board Title"
+                    className="p-2 rounded-lg border-2"
+                  />
+                </div>
+                <div className="flex flex-col gap-2">
+                  <Textarea placeholder="Board Description" />
+                </div>
+              </div>
+            </div>
             <button>Create New Board</button>
           </DialogDescription>
         </DialogContent>

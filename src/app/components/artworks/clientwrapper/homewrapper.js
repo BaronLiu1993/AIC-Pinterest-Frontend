@@ -55,20 +55,20 @@ export default function HomeWrapper({ awaitedArtworks, iiifUrl }) {
             placeholder="Search"
           />
         </div>
-        <div className="m-4 flex gap-4">
+
+        <div className="flex gap-4 flex-wrap">
           <CreateBoardButton />
           <FindFriends />
-          <div className="flex gap-4 flex-wrap">
-            {exploreCards.map((card, index) => (
-              <ExploreCard
-                key={index}
-                title={card.title}
-                bgColor={card.bgColor}
-                fontClass={card.fontClass}
-              />
-            ))}
-          </div>
+          {exploreCards.map((card, index) => (
+            <ExploreCard
+              key={index}
+              title={card.title}
+              bgColor={card.bgColor}
+              fontClass={card.fontClass}
+            />
+          ))}
         </div>
+
         <Masonry
           breakpointCols={breakpointColumnsObj}
           className={masonryStyles["my-masonry-grid"]}

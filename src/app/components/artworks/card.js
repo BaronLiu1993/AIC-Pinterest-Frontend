@@ -22,15 +22,14 @@ export default function Card({
   const src = `${iiifUrl}/${imageId}/full/843,/0/default.jpg`;
 
   return (
-    <div className="font-IBM font-medium hover:bg-gray-50 rounded-xl p-4 gap-2 flex flex-col cursor-pointer hover:scale-105 transition-transform duration-500">
+    <div className="font-IBM font-medium hover:bg-gray-50 rounded-xl p-4 gap-2 flex flex-col hover:scale-105 transition-transform duration-500">
       <div className="w-full bg-gray-200 rounded-2xl overflow-hidden relative group">
         <button className="absolute text-lg top-4 right-4 bg-red-400 px-2 py-1 text-white rounded-md hover:bg-red-500 cursor-pointer opacity-0 group-hover:opacity-100 transition-opacity duration-200 z-10">
           Pin Art
         </button>
-
         {!hasError ? (
           <Tooltip>
-            <TooltipTrigger>
+            <TooltipTrigger className="cursor-pointer">
               <Image
                 src={src}
                 alt={title || "Artwork"}

@@ -24,7 +24,7 @@ export default function Card({
   return (
     <div className="font-IBM font-medium hover:bg-gray-50 rounded-xl p-4 gap-2 flex flex-col hover:scale-105 transition-transform duration-500">
       <div className="w-full bg-gray-200 rounded-2xl overflow-hidden relative group">
-        <button className="absolute text-lg top-4 right-4 bg-red-400 px-2 py-1 text-white rounded-md hover:bg-red-500 cursor-pointer opacity-0 group-hover:opacity-100 transition-opacity duration-200 z-10">
+        <button className="absolute text-lg top-4 right-4 bg-red-400 px-4 py-2 text-white rounded-md hover:bg-red-500 cursor-pointer opacity-0 group-hover:opacity-100 transition-opacity duration-200 z-10">
           Pin Art
         </button>
         {!hasError ? (

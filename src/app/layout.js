@@ -1,5 +1,14 @@
-import { Geist, Geist_Mono, IBM_Plex_Sans, Playfair_Display, Noto_Serif_KR, Noto_Serif_JP, Noto_Serif_TC } from "next/font/google";
+import {
+  Geist,
+  Geist_Mono,
+  IBM_Plex_Sans,
+  Playfair_Display,
+  Noto_Serif_KR,
+  Noto_Serif_JP,
+  Noto_Serif_TC,
+} from "next/font/google";
 import "./globals.css";
+import { ReactQueryClientProvider } from "./components/query/reactQueryClientProvider";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -14,27 +23,27 @@ const geistMono = Geist_Mono({
 const IBMPlexSans = IBM_Plex_Sans({
   variable: "--font-IBM",
   subsets: ["latin"],
-}) 
+});
 
 const playfairDisplay = Playfair_Display({
   variable: "--font-playfair",
   subsets: ["latin"],
-})
+});
 
 const NotoSerifJP = Noto_Serif_JP({
   variable: "--font-jp",
   subsets: ["latin"],
-})
+});
 
 const NotoSerifKR = Noto_Serif_KR({
   variable: "--font-playfair",
   subsets: ["latin"],
-})
+});
 
 const NotoSerifTC = Noto_Serif_TC({
   variable: "--font-tc",
   subsets: ["latin"],
-})
+});
 
 export const metadata = {
   title: "Create Next App",
@@ -43,12 +52,14 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
-      <body
-        className={`${NotoSerifJP.variable} ${NotoSerifKR.variable} ${NotoSerifTC.variable} ${geistSans.variable} ${geistMono.variable} ${playfairDisplay.variable} ${IBMPlexSans.variable} antialiased`}
-      >
-        {children}
-      </body>
-    </html>
+    <ReactQueryClientProvider>
+      <html lang="en">
+        <body
+          className={`${NotoSerifJP.variable} ${NotoSerifKR.variable} ${NotoSerifTC.variable} ${geistSans.variable} ${geistMono.variable} ${playfairDisplay.variable} ${IBMPlexSans.variable} antialiased`}
+        >
+          {children}
+        </body>
+      </html>
+    </ReactQueryClientProvider>
   );
 }
